@@ -24,39 +24,8 @@ import androidx.compose.ui.unit.sp
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
-            Column {
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp)
-                        .border(border = BorderStroke(width = 1.dp, color = Color.Red)),
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        text = "Item 1 ",
-                        modifier = Modifier.align(Alignment.CenterHorizontally)
-                    )
-                }
-
-                Spacer(modifier = Modifier.padding(20.dp))
-
-                Row(
-                    modifier = Modifier
-                        .width(200.dp)
-                        .height(200.dp)
-                        .border(border = BorderStroke(width = 1.dp, color = Color.Red))
-                ) {
-                    Text(
-                        text = "Item 1 ",
-                        modifier = Modifier.align(Alignment.CenterVertically)
-                    )
-                }
-            }
-
-        }
-
-        /*setContent {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -68,33 +37,44 @@ class MainActivity : ComponentActivity() {
                 Image(
                     painter = painterResource(id = R.drawable.burger),
                     contentDescription = null,
-                    modifier = Modifier.clip(RoundedCornerShape(10))
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(10))
                         .height(300.dp),
                     contentScale = ContentScale.Crop,
                 )
 
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        text = "Happy Meal",
-                        fontSize = 26.sp
-                    )
+                    Row (
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+
+
+                        Text(
+                            text = "Happy Meal",
+                            fontSize = 26.sp
+                        )
+
+                        //Spacer(modifier = Modifier.padding(top = 10.dp))
+                        Text(
+                            text = "$5",
+                            style = TextStyle(
+                                color = Color(0xFF85bb65),
+                                fontSize = 16.sp
+                            ),
+                            modifier = Modifier.align(Alignment.CenterVertically)
+                        )
+                    }
+
                     Spacer(modifier = Modifier.padding(top = 10.dp))
                     Text(
                         text = "800 Calories",
                         fontSize = 16.sp
                     )
-                    Spacer(modifier = Modifier.padding(top = 10.dp))
-                    Text(
-                        text = "$5",
-                        style = TextStyle(
-                            color = Color(0xFF85bb65),
-                            fontSize = 16.sp
-                        ),
-                    )
                 }
             }
 
-        }*/
+        }
     }
 }
 
