@@ -9,6 +9,7 @@ import androidx.compose.foundation.gestures.ScrollableState
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,10 +45,10 @@ class MainActivity : ComponentActivity() {
                 )
 
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Row (
+                    Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
+                    ) {
 
 
                         Text(
@@ -71,6 +72,13 @@ class MainActivity : ComponentActivity() {
                         text = "800 Calories",
                         fontSize = 16.sp
                     )
+
+                    Spacer(modifier = Modifier.padding(top = 10.dp))
+                    Button(
+                        onClick = { /*TODO*/ },
+                    modifier = Modifier.align(Alignment.CenterHorizontally)) {
+                        Text(text = "Order Now")
+                    }
                 }
             }
 
