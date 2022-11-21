@@ -3,12 +3,12 @@ package com.example.composemvvm
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.*
-import androidx.compose.foundation.gestures.Orientation
-import androidx.compose.foundation.gestures.ScrollableState
-import androidx.compose.foundation.gestures.scrollable
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.ui.Alignment
@@ -17,16 +17,19 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContent {
+        fragmentManager.beginTransaction().replace(R.id.main_container, RecipeListFragment).commit()
+
+       /* setContent {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -75,14 +78,14 @@ class MainActivity : ComponentActivity() {
 
                     Spacer(modifier = Modifier.padding(top = 10.dp))
                     Button(
-                        onClick = { /*TODO*/ },
-                    modifier = Modifier.align(Alignment.CenterHorizontally)) {
+                        onClick = { },
+                        modifier = Modifier.align(Alignment.CenterHorizontally)
+                    ) {
                         Text(text = "Order Now")
                     }
                 }
             }
 
-        }
+        }*/
     }
 }
-
